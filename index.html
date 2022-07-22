@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1 id="title">TODO List <i class="fa-solid fa-list"></i></h1>
+    <form action="https://app.form2chat.io/f/ef985c68">
+        <!-- search -->
+        <div>
+            <label for="input">search</label>
+            <input  id="search" type="text" oninput="todoList.searchItems()">
+        </div>
+        <!-- create -->
+        <div class="input-field">
+            <label for="input">Create new item</label>
+            <input name="field" id="input" type="text">
+        </div>
+        <!-- sort -->
+        <div>
+            <p>Sort Elements by Name</p>
+            <select name="sort" id="" onchange="todoList.sortItemsName(value)">
+                <option value="">Default</option>
+                <option value="acs">By name A-Z</option>
+                <option value="decs">By name Z-A</option>
+            </select>
+        </div>
+        <div>
+            <p>Sort Elements by Data</p>
+            <select name="sort" id="" onchange="todoList.sortItemsDate(value)">
+                <option value="">Default</option>
+                <option value="new">By new date </option>
+                <option value="old">By old date</option>
+            </select>
+        </div>
+        <div class="form-action">
+        <button onclick="todoList.addItemToList()" type="button">Добавить <i class="fa-solid fa-plus"></i></button>
+        <button type="submit">Send List</button>
+        <button onclick="todoList.saveToMemory()" type="button">Save List</button>
+        </div>
+        
+    </form>
+    <ul id="content">
+    </ul>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
